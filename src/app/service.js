@@ -8,6 +8,8 @@ import Path from 'path';
 import AuthService from '../auth/service.js';
 import ConfigService from '../config/service.js';
 
+import * as Login from '../users/features/login.js';
+import * as Logout from '../users/features/logout.js';
 import * as Register from '../users/features/register.js';
 
 export default class AppService
@@ -18,6 +20,8 @@ export default class AppService
 	static app;
 
 	static features = [
+		Login,
+		Logout,
 		Register,
 	];
 
@@ -49,7 +53,8 @@ export default class AppService
 			else
 			{
 				AppService.app.get(
-					feature.url, feature.action,
+					feature.url,
+					feature.action,
 				);
 			}
 		}

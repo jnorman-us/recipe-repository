@@ -1,7 +1,7 @@
 import CheckAPIs from 'express-validator';
 
 import auth from '../../auth/features/auth.js';
-import loggedOut from '../../auth/features/auth.js';
+import loggedOut from '../../auth/features/logged-out.js';
 
 import UsersService from '../service.js';
 import User from '../user.js';
