@@ -1,18 +1,18 @@
-import PlayersService from '../../players/players.service.js';
+import UsersService from '../../users/service.js';
 
 export default async function auth(req, res, next)
 {
-	var player_id = req.session.player_id;
+	const user_id = req.session.user_id;
 
-	if(player_id == null)
+	if(user_id == null)
 	{
 		req.logged_in = false;
 		return next();
 	}
 
-	var player = await PlayersService.getPlayerById(player_id);
+	var user = await UsersService.getById(user_id);
 
-	if(player == null)
+	if(user == null)
 	{
 		req.logged_in = false;
 		return next();
@@ -20,7 +20,7 @@ export default async function auth(req, res, next)
 	else
 	{
 		req.logged_in = true;
-		req.player = player;
+		req.user = user;
 		return next();
 	}
 }

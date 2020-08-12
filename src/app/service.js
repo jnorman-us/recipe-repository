@@ -8,6 +8,8 @@ import Path from 'path';
 import AuthService from '../auth/service.js';
 import ConfigService from '../config/service.js';
 
+import * as Register from '../users/features/register.js';
+
 export default class AppService
 {
 	static production;
@@ -16,7 +18,7 @@ export default class AppService
 	static app;
 
 	static features = [
-
+		Register,
 	];
 
 	static async initialize()

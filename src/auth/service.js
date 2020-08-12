@@ -15,12 +15,12 @@ export default class AuthService
 		});
 	}
 
-	static playerLogin(req, player_id)
+	static login(req, user_id)
 	{
-		req.session.player_id = player_id;
+		req.session.user_id = user_id;
 	}
 
-	static playerLogout(req)
+	static logout(req)
 	{
 		req.session = null;
 	}

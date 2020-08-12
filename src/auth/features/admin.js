@@ -1,6 +1,6 @@
 export default async function admin(req, res, next)
 {
-	if(req.player.admin == true)
+	if(req.user.admin == true)
 	{
 		return next();
 	}
