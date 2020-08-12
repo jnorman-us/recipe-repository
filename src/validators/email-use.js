@@ -4,5 +4,7 @@ export default async function validate(email)
 {
 	const user = await UsersService.getByEmail(email);
 
-	return user == null;
+	if(user != null)
+		throw new Error('Email is already in use!');
+	return true;
 }

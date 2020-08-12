@@ -38,8 +38,7 @@ export const rules = [
 	CheckAPIs.check('email')
 		.isEmail()
 		.withMessage('Must provide a valid email')
-		.custom(validateEmailUse)
-		.withMessage('Email is already in use!'),
+		.custom(validateEmailUse),
 	CheckAPIs.check('display_name')
 		.isLength({ min: 4, })
 		.withMessage('Must provide a name with at least 4 characters')
