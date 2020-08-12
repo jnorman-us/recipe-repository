@@ -17,7 +17,7 @@ async function register(req, res)
 
 	const hashed_password = User.hashPassword(password);
 
-	const user = await UsersService.createUser({
+	const user = await UsersService.create({
 		email: email,
 		display_name: display_name,
 		password: hashed_password,

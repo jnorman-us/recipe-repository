@@ -10,6 +10,7 @@ export default class DatabaseService
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 		});
+		Mongoose.set('useFindAndModify', false);
 	}
 
 	static createModel(name, wrapperClass)

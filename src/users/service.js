@@ -13,9 +13,16 @@ export default class UsersService
 		UsersService.model = DatabaseService.createModel('User', User);
 	}
 
-	static async createUser(data)
+	static async create(data)
 	{
 		return await UsersService.model.create(data);
+	}
+
+	static async edit(id, data)
+	{
+		return await UsersService.model.findOneAndUpdate({
+			_id: id,
+		}, data);
 	}
 
 	static async getById(id)

@@ -10,6 +10,7 @@ import ConfigService from '../config/service.js';
 
 import * as Login from '../users/features/login.js';
 import * as Logout from '../users/features/logout.js';
+import * as MakeAdmin from '../users/features/make-admin.js';
 import * as Register from '../users/features/register.js';
 
 export default class AppService
@@ -22,6 +23,7 @@ export default class AppService
 	static features = [
 		Login,
 		Logout,
+		MakeAdmin,
 		Register,
 	];
 

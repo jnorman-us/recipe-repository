@@ -1,4 +1,4 @@
-export default async function admin(req, res, next)
+export default async function isAdmin(req, res, next)
 {
 	if(req.user.admin == true)
 	{
