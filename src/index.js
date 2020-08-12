@@ -4,6 +4,7 @@ import DatabaseService from './database/service.js';
 import AuthService from './auth/service.js';
 import AppService from './app/service.js';
 
+import IngredientsService from './ingredients/service.js';
 import UsersService from './users/service.js';
 
 (async function() {
@@ -13,5 +14,6 @@ import UsersService from './users/service.js';
 	await AuthService.initialize();
 	await AppService.initialize();
 
+	await IngredientsService.initialize();
 	await UsersService.initialize();
 })();

@@ -32,13 +32,13 @@ export default class IngredientsService
 		});
 	}
 
-	static async searchByName(search)
+	static async searchByName(search, result_limit)
 	{
 		return await IngredientsService.model.find({
 			name: {
 				$regex: new RegExp("/" + search + "/g"),
 				$options: 'i',
 			}
-		});
+		}).limit(result_limit);
 	}
 }

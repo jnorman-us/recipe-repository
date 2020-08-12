@@ -8,6 +8,8 @@ import Path from 'path';
 import AuthService from '../auth/service.js';
 import ConfigService from '../config/service.js';
 
+import * as CreateIngredient from '../ingredients/features/create-ingredient.js';
+
 import * as Login from '../users/features/login.js';
 import * as Logout from '../users/features/logout.js';
 import * as MakeAdmin from '../users/features/make-admin.js';
@@ -21,6 +23,8 @@ export default class AppService
 	static app;
 
 	static features = [
+		CreateIngredient,
+		
 		Login,
 		Logout,
 		MakeAdmin,
