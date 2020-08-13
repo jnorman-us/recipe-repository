@@ -5,6 +5,7 @@ import AuthService from './auth/service.js';
 import AppService from './app/service.js';
 
 import IngredientsService from './ingredients/service.js';
+import RecipesService from './recipes/service.js';
 import TagsService from './tags/service.js';
 import UsersService from './users/service.js';
 
@@ -16,6 +17,7 @@ import UsersService from './users/service.js';
 	await AppService.initialize();
 
 	await IngredientsService.initialize();
+	await RecipesService.initialize();
 	await TagsService.initialize();
 	await UsersService.initialize();
 })();

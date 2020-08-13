@@ -20,4 +20,9 @@ export default class DatabaseService
 
 		return Mongoose.model(name, mongooseSchema);
 	}
+
+	static addSchemaType(Type, name)
+	{
+		Mongoose.Schema.Types[name] = Type;
+	}
 }
