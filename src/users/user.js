@@ -28,6 +28,16 @@ export default class User extends DatabaseObject
 		return PasswordHash.verify(password, this.password);
 	}
 
+	get safe()
+	{
+		return {
+			id: this.id,
+			display_name: this.display_name,
+			email: this.email,
+			admin: this.admin,
+		}
+	}
+
 	static hashPassword(password)
 	{
 		return PasswordHash.generate(password);

@@ -1,10 +1,9 @@
 import DatabaseObject from '../database/database-object.js';
 
-export default class Ingredient extends DatabaseObject
+export default class Tag extends DatabaseObject
 {
 	static schema = {
 		name: String,
-		description: String,
 		// image...
 	};
 
@@ -12,12 +11,12 @@ export default class Ingredient extends DatabaseObject
 
 	static initialize(service)
 	{
-		Ingredient.Service = service;
+		Tag.Service = service;
 	}
 
 	constructor(object)
 	{
-		super(object, Ingredient.schema);
+		super(object, Tag.schema);
 	}
 
 	get safe()
@@ -25,7 +24,6 @@ export default class Ingredient extends DatabaseObject
 		return {
 			id: this.id,
 			name: this.name,
-			description: this.description,
 		};
 	}
 }

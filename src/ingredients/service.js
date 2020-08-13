@@ -34,9 +34,11 @@ export default class IngredientsService
 
 	static async searchByName(search, result_limit)
 	{
+		const regex = new RegExp(search);
+
 		return await IngredientsService.model.find({
 			name: {
-				$regex: new RegExp("/" + search + "/g"),
+				$regex: regex,
 				$options: 'i',
 			}
 		}).limit(result_limit);

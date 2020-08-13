@@ -39,9 +39,15 @@ export default class UsersService
 		});
 	}
 
-	static async searchByDisplayName(search)
+	static async searchByDisplayName(search, result_limit)
 	{
-		// this will be some smart alg to find the best match for display name...
-		// no idea the BEST way to do that, but I can think of bad ways to do it lol
+		const regex = new RegExp(search);
+
+		return await UsersService.model.find({
+			display_name: {
+				$regex: regex,
+				$options: 'i',
+			}
+		}).limit(result_limit);
 	}
 }
