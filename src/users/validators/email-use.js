@@ -1,4 +1,4 @@
-import UsersService from '../users/service.js';
+import UsersService from '../service.js';
 
 export default async function validate(email)
 {

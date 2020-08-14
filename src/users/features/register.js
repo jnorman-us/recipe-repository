@@ -7,7 +7,7 @@ import UsersService from '../service.js';
 import User from '../user.js';
 
 import validate from '../../validators/features/validate.js';
-import validateEmailUse from '../../validators/email-use.js';
+import validateEmailUse from '../validators/email-use.js';
 
 async function register(req, res)
 {
