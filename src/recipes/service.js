@@ -1,6 +1,7 @@
 import DatabaseService from '../database/service.js';
 
 import Recipe from './recipe.js';
+import Instruction from './instruction.js';
 
 export default class RecipesService
 {
@@ -11,7 +12,7 @@ export default class RecipesService
 		Recipe.initialize(RecipesService);
 
 		// add all of the new schema types first
-		//DatabaseService.addSchemaType(RecipeInstruction, 'RecipeInstruction');
+		DatabaseService.addSchemaType(Instruction, 'Instruction');
 
 		RecipesService.model = DatabaseService.createModel('Recipe', Recipe);
 	}

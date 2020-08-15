@@ -12,6 +12,8 @@ import * as CreateIngredient from '../ingredients/features/create.js';
 import * as GetIngredient from '../ingredients/features/get.js';
 import * as SearchIngredients from '../ingredients/features/search.js';
 
+import * as CreateRecipe from '../recipes/features/create.js';
+
 import * as CreateTag from '../tags/features/create.js';
 import * as GetTag from '../tags/features/get.js';
 
@@ -33,6 +35,8 @@ export default class AppService
 		CreateIngredient,
 		GetIngredient,
 		SearchIngredients,
+
+		CreateRecipe,
 
 		CreateTag,
 		GetTag,

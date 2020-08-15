@@ -7,7 +7,7 @@ import isAdmin from '../../auth/features/is-admin.js';
 import UsersService from '../service.js';
 
 import validate from '../../validators/features/validate.js';
-import validateRealUserId from '../validators/real-user-id.js';
+import validateRealUserId from '../validators/real-id.js';
 
 async function makeAdmin(req, res)
 {
