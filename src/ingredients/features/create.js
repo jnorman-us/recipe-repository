@@ -6,16 +6,20 @@ import isAdmin from '../../auth/features/is-admin.js';
 
 import IngredientsService from '../service.js';
 
+import validateIsUnitType from '../../units/validators/is-unit-type.js';
+
 import validate from '../../validators/features/validate.js';
 
 async function createIngredient(req, res)
 {
 	const name = req.body.name;
 	const description = req.body.description;
+	const unit_type = req.body.unit_type;
 
 	const ingredient = await IngredientsService.create({
 		name: name,
 		description: description,
+		unit_type: unit_type,
 	});
 
 	return res.status(
@@ -37,5 +41,9 @@ export const rules = [
 		.withMessage('Description must be at least 15 characters')
 		.isLength({ max: 250 })
 		.withMessage('Description can be no longer than 250 characters'),
+	CheckAPIs.check('unit_type')
+		.isLength({ min: 1 })
+		.withMessage('Must provide a unit_type')
+		.custom(validateIsUnitType),
 ];
 export const action = [ auth, loggedIn, isAdmin, validate, createIngredient ];

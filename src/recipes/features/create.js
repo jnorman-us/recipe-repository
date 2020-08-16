@@ -13,6 +13,9 @@ import RecipesService from '../service.js';
 
 import validateRealTagId from '../../tags/validators/real-id.js';
 
+import validateIsUnit from '../../units/validators/is-unit.js';
+import validateIsUnitOfType from '../../units/validators/is-unit-of-type.js';
+
 import validate from '../../validators/features/validate.js';
 
 async function createRecipe(req, res)
@@ -48,7 +51,8 @@ async function createRecipe(req, res)
 			const recipe_ingredient = await RecipeIngredientsService.create({
 				recipe_id: recipe.id,
 				ingredient_id: ingredient.ingredient_id,
-				quantity: 5,
+				quantity: ingredient.quantity,
+				units: ingredient.units,
 			});
 		}
 
@@ -83,6 +87,15 @@ export const rules = [
 		.isLength({ min: 1 })
 		.withMessage('Must provide a ingredient_id in ingredients')
 		.custom(validateRealIngredientId),
+	CheckAPIs.check('ingredients.*.quantity')
+		.isFloat()
+		.withMessage('Must provide a numerical quantity'),
+	CheckAPIs.check('ingredients.*.units')
+		.isLength({ min: 1 })
+		.withMessage('Must provide a unit')
+		.custom(validateIsUnit),
+	CheckAPIs.check('ingredients.*')
+		.custom(validateIsUnitOfType),
 	CheckAPIs.check('instructions')
 		.isArray()
 		.withMessage('Must provide an instructions array'),

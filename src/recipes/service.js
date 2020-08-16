@@ -1,7 +1,7 @@
 import DatabaseService from '../database/service.js';
 
 import Recipe from './recipe.js';
-import Instruction from './instruction.js';
+import Instruction from './types/instruction.js';
 
 export default class RecipesService
 {

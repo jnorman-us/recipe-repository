@@ -1,10 +1,13 @@
 import DatabaseObject from '../database/database-object.js';
 
+import UnitType from '../units/types/unit-type.js';
+
 export default class Ingredient extends DatabaseObject
 {
 	static schema = {
 		name: String,
 		description: String,
+		unit_type: UnitType,
 		// image...
 	};
 

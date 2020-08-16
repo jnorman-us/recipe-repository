@@ -1,7 +1,5 @@
 import Mongoose from 'mongoose';
 
-import DatabaseService from '../database/service.js';
-
 export default class Instruction extends Mongoose.SchemaType
 {
 	constructor(key, options)

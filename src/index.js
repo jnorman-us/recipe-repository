@@ -3,6 +3,7 @@ import LoggerService from './logger/service.js';
 import DatabaseService from './database/service.js';
 import AuthService from './auth/service.js';
 import AppService from './app/service.js';
+import UnitsService from './units/service.js';
 
 import IngredientsService from './ingredients/service.js';
 import RecipeIngredientsService from './recipe-ingredients/service.js';
@@ -17,7 +18,8 @@ import UsersService from './users/service.js';
 	await DatabaseService.initialize();
 	await AuthService.initialize();
 	await AppService.initialize();
-
+	await UnitsService.initialize();
+	
 	await IngredientsService.initialize();
 	await RecipeIngredientsService.initialize();
 	await RecipeTagsService.initialize();

@@ -1,0 +1,22 @@
+{
+	"types": [{
+		"type": "mass",
+		"units": [
+			"oz",
+			"lb"
+		]
+	}, {
+		"type": "volume",
+		"units": [
+			"tsp",
+			"Tbs",
+			"cup",
+			"gal"
+		]
+	}, {
+		"type": "count",
+		"units": [
+			"count"
+		]
+	}]
+}

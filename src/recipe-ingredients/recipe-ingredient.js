@@ -6,12 +6,15 @@ import IngredientsService from '../ingredients/service.js';
 
 import RecipesService from '../recipes/service.js';
 
+import Unit from '../units/types/unit.js';
+
 export default class RecipeIngredient extends DatabaseObject
 {
 	static schema = {
 		recipe_id: Mongoose.Schema.Types.ObjectId,
 		ingredient_id: Mongoose.Schema.Types.ObjectId,
 		quantity: Number,
+		units: Unit,
 	};
 
 	static Service = null;
