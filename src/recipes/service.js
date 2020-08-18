@@ -28,4 +28,11 @@ export default class RecipesService
 			_id: id,
 		});
 	}
+
+	static async edit(id, data)
+	{
+		return await RecipesService.model.findOneAndUpdate({
+			_id: id,
+		}, data);
+	}
 }

@@ -12,7 +12,12 @@ import * as CreateIngredient from '../ingredients/features/create.js';
 import * as GetIngredient from '../ingredients/features/get.js';
 import * as SearchIngredients from '../ingredients/features/search.js';
 
+import * as AddRecipeIngredient from '../recipe-ingredients/features/add.js';
+
+import * as AddRecipeTag from '../recipe-tags/features/add.js';
+
 import * as CreateRecipe from '../recipes/features/create.js';
+import * as UpdateInstructions from '../recipes/features/update-instructions.js';
 
 import * as CreateTag from '../tags/features/create.js';
 import * as GetTag from '../tags/features/get.js';
@@ -36,7 +41,12 @@ export default class AppService
 		GetIngredient,
 		SearchIngredients,
 
+		AddRecipeIngredient,
+
+		AddRecipeTag,
+
 		CreateRecipe,
+		UpdateInstructions,
 
 		CreateTag,
 		GetTag,

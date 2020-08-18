@@ -4,7 +4,7 @@ import UnitsService from '../service.js';
 
 export default async function validate(recipe_ingredient)
 {
-	const ingredient_id = recipe_ingredient.ingredient_id;
+	const ingredient_id = recipe_ingredient.id;
 
 	const ingredient = await IngredientsService.getById(ingredient_id);
 
