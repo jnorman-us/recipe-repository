@@ -41,7 +41,7 @@ export const rules = [
 	CheckAPIs.check('description')
 		.isLength({ min: 15 })
 		.withMessage('Description must be at least 15 characters')
-		.isLength({ max: 250 })
-		.withMessage('Description can be no longer than 250 characters'),
+		.isLength({ max: 1000 })
+		.withMessage('Description can be no longer than 1000 characters'),
 ];
 export const action = [ auth, loggedIn, validate, createRecipe ];
