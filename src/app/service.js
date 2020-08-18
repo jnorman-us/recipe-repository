@@ -17,6 +17,7 @@ import * as AddRecipeIngredient from '../recipe-ingredients/features/add.js';
 import * as AddRecipeTag from '../recipe-tags/features/add.js';
 
 import * as CreateRecipe from '../recipes/features/create.js';
+import * as GetRecipe from '../recipes/features/get.js';
 import * as UpdateInstructions from '../recipes/features/update-instructions.js';
 
 import * as CreateTag from '../tags/features/create.js';
@@ -46,6 +47,7 @@ export default class AppService
 		AddRecipeTag,
 
 		CreateRecipe,
+		GetRecipe,
 		UpdateInstructions,
 
 		CreateTag,
