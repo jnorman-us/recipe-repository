@@ -27,6 +27,7 @@ import * as GetUser from '../users/features/get.js';
 import * as Login from '../users/features/login.js';
 import * as Logout from '../users/features/logout.js';
 import * as MakeAdmin from '../users/features/make-admin.js';
+import * as Me from '../users/features/me.js';
 import * as Register from '../users/features/register.js';
 import * as SearchUsers from '../users/features/search.js';
 
@@ -61,6 +62,7 @@ export default class AppService
 		Login,
 		Logout,
 		MakeAdmin,
+		Me,
 		Register,
 		SearchUsers,
 

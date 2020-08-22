@@ -1,0 +1,14 @@
+body {
+	margin: 0;
+}
+
+.page-menu {
+	width: 100vw;
+	height: 85px;
+}
+
+.page-content {
+	width: 100vw;
+	height: auto;
+	background-color: #ffd5c2;
+}
