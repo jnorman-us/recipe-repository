@@ -30,6 +30,10 @@ import * as MakeAdmin from '../users/features/make-admin.js';
 import * as Register from '../users/features/register.js';
 import * as SearchUsers from '../users/features/search.js';
 
+import * as ApiGetWildcard from './features/api-get-wildcard.js';
+import * as ApiPostWildcard from './features/api-post-wildcard.js';
+import * as FrontendWildcard from './features/frontend-wildcard.js';
+
 export default class AppService
 {
 	static production;
@@ -59,6 +63,13 @@ export default class AppService
 		MakeAdmin,
 		Register,
 		SearchUsers,
+
+		// api wildcards, handle error code 404
+		ApiGetWildcard,
+		ApiPostWildcard,
+
+		// wildcard for frontend
+		FrontendWildcard,
 	];
 
 	static async initialize()

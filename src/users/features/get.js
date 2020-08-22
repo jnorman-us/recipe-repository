@@ -21,5 +21,5 @@ async function getUser(req, res)
 	return res.status(422).send();
 }
 
-export const url = '/users';
+export const url = '/api/users';
 export const action = [ getUser ];

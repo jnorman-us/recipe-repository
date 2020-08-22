@@ -44,5 +44,5 @@ async function getRecipe(req, res)
 	return res.status(422).send();
 }
 
-export const url = '/recipes';
+export const url = '/api/recipes';
 export const action = [ getRecipe ];

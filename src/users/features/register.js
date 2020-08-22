@@ -33,7 +33,7 @@ async function register(req, res)
 	);
 }
 
-export const url = '/users/register';
+export const url = '/api/users/register';
 export const rules = [
 	CheckAPIs.check('email')
 		.isEmail()

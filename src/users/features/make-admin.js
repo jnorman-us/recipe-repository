@@ -30,7 +30,7 @@ async function makeAdmin(req, res)
 	}
 }
 
-export const url = '/users/make-admin';
+export const url = '/api/users/make-admin';
 export const rules = [
 	CheckAPIs.check('id')
 		.custom(validateRealUserId),

@@ -44,7 +44,7 @@ async function addRecipeTag(req, res)
 	return res.status(403).json();
 }
 
-export const url = '/recipe-tags/add';
+export const url = '/api/recipe-tags/add';
 export const rules = [
 	CheckAPIs.check('recipe_id')
 		.isLength({ min: 1 })

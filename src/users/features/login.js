@@ -28,7 +28,7 @@ async function login(req, res)
 	return res.status(403).json();
 }
 
-export const url = '/users/login';
+export const url = '/api/users/login';
 export const rules = [
 	CheckAPIs.check('email')
 		.isLength({ min: 1 })

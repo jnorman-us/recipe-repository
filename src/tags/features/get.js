@@ -21,5 +21,5 @@ async function getTag(req, res)
 	return res.status(422).send();
 }
 
-export const url = '/tags';
+export const url = '/api/tags';
 export const action = [ getTag ];

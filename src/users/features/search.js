@@ -17,7 +17,7 @@ async function searchUsers(req, res)
 	});
 }
 
-export const url = '/users/search';
+export const url = '/api/users/search';
 export const rules = [
 	CheckAPIs.check('query')
 		.isLength({ min: 1 })

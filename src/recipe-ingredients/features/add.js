@@ -49,7 +49,7 @@ async function addRecipeIngredient(req, res)
 	return res.status(403).json();
 }
 
-export const url = '/recipe-ingredients/add';
+export const url = '/api/recipe-ingredients/add';
 export const rules = [
 	CheckAPIs.check('recipe_id')
 		.isLength({ min: 1 })

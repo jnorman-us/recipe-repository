@@ -31,7 +31,7 @@ async function createIngredient(req, res)
 	);
 }
 
-export const url = '/ingredients/create';
+export const url = '/api/ingredients/create';
 export const rules = [
 	CheckAPIs.check('name')
 		.isLength({ min: 1 })

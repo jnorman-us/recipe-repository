@@ -6,5 +6,5 @@ async function logout(req, res)
 	res.status(200).json();
 }
 
-export const url = '/users/logout';
+export const url = '/api/users/logout';
 export const action = [ logout ];

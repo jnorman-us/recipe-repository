@@ -25,7 +25,7 @@ async function createTag(req, res)
 	);
 }
 
-export const url = '/tags/create';
+export const url = '/api/tags/create';
 export const rules = [
 	CheckAPIs.check('name')
 		.isLength({ min: 1 })

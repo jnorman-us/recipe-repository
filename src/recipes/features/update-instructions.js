@@ -29,7 +29,7 @@ async function updateInstructions(req, res)
 	return res.status(403).json();
 }
 
-export const url = '/recipes/update-instructions';
+export const url = '/api/recipes/update-instructions';
 export const rules = [
 	CheckAPIs.check('recipe_id')
 		.isLength({ min: 1 })

@@ -21,5 +21,5 @@ async function getIngredient(req, res)
 	return res.status(422).send();
 }
 
-export const url = '/ingredients';
+export const url = '/api/ingredients';
 export const action = [ getIngredient ];

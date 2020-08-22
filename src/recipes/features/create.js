@@ -33,7 +33,7 @@ async function createRecipe(req, res)
 	res.status(500).json();
 }
 
-export const url = '/recipes/create';
+export const url = '/api/recipes/create';
 export const rules = [
 	CheckAPIs.check('name')
 		.isLength({ min: 1 })

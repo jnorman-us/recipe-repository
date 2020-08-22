@@ -17,7 +17,7 @@ async function searchIngredients(req, res)
 	});
 }
 
-export const url = '/ingredients/search';
+export const url = '/api/ingredients/search';
 export const rules = [
 	CheckAPIs.check('query')
 		.isLength({ min: 1 })
