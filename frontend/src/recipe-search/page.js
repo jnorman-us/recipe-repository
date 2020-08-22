@@ -2,6 +2,22 @@ import React from 'react';
 
 export default class RecipeSearchPage extends React.Component
 {
+	constructor(props)
+	{
+		super(props);
+		this.componentWillReceiveProps(props);
+	}
+
+	componentWillReceiveProps(props)
+	{
+		console.log(props);
+	}
+
+	async componentDidMount()
+	{
+
+	}
+
 	render()
 	{
 		return (
