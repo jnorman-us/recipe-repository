@@ -20,3 +20,27 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 }
+
+.menu-search {
+	background-color: white;
+	height: 35px;
+	margin: 15px 0px;
+	border-radius: 17.5px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-top: 2.5px;
+}
+
+.menu-search-icon {
+	color: black;
+	font-size: 18px;
+}
+
+.menu-search-input {
+	font-size: 18px;
+	margin-left: 10px;
+	width: calc(100% - 30px);
+	border: 0px;
+	outline: 0px;
+	color: black;
+}

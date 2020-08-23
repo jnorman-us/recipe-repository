@@ -1,6 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
+import FA from 'react-fontawesome';
+
+
 import './menu.css';
 
 export default class MenuPage extends React.Component
@@ -36,13 +39,22 @@ export default class MenuPage extends React.Component
 			<div className={ `menu ${ this.state.mobile ? 'menu-mobile' : '' }`}>
 				<Container fluid className="px-0">
 					<Row>
-						<Col>
+						<Col xs={ 4 } md={ 3 }>
 							<div className='menu-logo' />
 						</Col>
-						<Col>
-							Search
+						<Col xs={ 4 } md={ 6 }>
+							<div className='menu-search'>
+								<FA
+									name='search'
+									className='menu-search-icon'
+								/>
+								<input
+									type='text'
+									className='menu-search-input'
+								/>
+							</div>
 						</Col>
-						<Col>
+						<Col xs={ 4 } md={ 3 }>
 							Account
 						</Col>
 					</Row>
