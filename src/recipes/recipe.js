@@ -32,6 +32,35 @@ export default class Recipe extends DatabaseObject
 		super(object, Recipe.schema);
 	}
 
+	async getFull()
+	{
+		const full_recipe = this.safe;
+
+		const creator = await this.getCreator();
+		if(creator != null) full_recipe.creator = creator.safe;
+		else full_recipe.creator = null;
+
+		full_recipe.tags = [];
+		for(const recipe_tag of (await this.getRecipeTags()))
+		{
+			full_recipe.tags.push({
+				...(await recipe_tag.getTag()).safe
+			});
+		}
+
+		full_recipe.ingredients = [];
+		for(const recipe_ingredient of (await this.getRecipeIngredients()))
+		{
+			full_recipe.ingredients.push({
+				quantity: recipe_ingredient.quantity,
+				units: recipe_ingredient.units,
+				...(await recipe_ingredient.getIngredient()).safe,
+			});
+		}
+
+		return full_recipe;
+	}
+
 	get safe()
 	{
 		return {

@@ -1,3 +1,5 @@
+import Convert from 'convert-units';
+
 import DatabaseService from '../database/service.js';
 
 import units from './units.json';
@@ -44,5 +46,35 @@ export default class UnitsService
 			}
 		}
 		return false;
+	}
+
+	static combine(quantity_a, units_a, quantity_b, units_b)
+	{
+		if(units_a == 'count')
+		{
+			return {
+				comb_quantity: quantity_a + quantity_b,
+				comb_units: units_a,
+			}
+		}
+
+		if(quantity_a > quantity_b)
+		{
+			quantity_a = Convert(quantity_a).from(units_a).to(units_b);
+
+			return {
+				comb_quantity: quantity_a + quantity_b,
+				comb_units: units_b,
+			};
+		}
+		else
+		{
+			quantity_b = Convert(quantity_b).from(units_b).to(units_a);
+
+			return {
+				comb_quantity: quantity_a + quantity_b,
+				comb_units: units_a,
+			};
+		}
 	}
 }

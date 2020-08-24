@@ -8,6 +8,8 @@ import Path from 'path';
 import AuthService from '../auth/service.js';
 import ConfigService from '../config/service.js';
 
+import * as CalculateGroceries from '../groceries/features/calculate.js';
+
 import * as CreateIngredient from '../ingredients/features/create.js';
 import * as GetIngredient from '../ingredients/features/get.js';
 import * as SearchIngredients from '../ingredients/features/search.js';
@@ -43,6 +45,8 @@ export default class AppService
 	static app;
 
 	static features = [
+		CalculateGroceries,
+		
 		CreateIngredient,
 		GetIngredient,
 		SearchIngredients,
