@@ -2,8 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import MenuBarPage from './menu/pages/bar.js';
-
-import Session from './main/session.js';
+import UserLoginPage from './user/pages/login.js';
 
 import './styles/page.css';
 
@@ -20,8 +19,6 @@ export default class Pages extends React.Component
 
 	async componentDidMount()
 	{
-		await Session.initialize();
-
 		this.updateDimensions();
 		window.addEventListener('resize', this.updateDimensions.bind(this));
 	}
@@ -53,22 +50,23 @@ export default class Pages extends React.Component
 
 		return (
 			<div>
-				<MenuBarPage mobile={ mobile } />
-				<div className="page-menu" />
-				<div className="page-content">
-					<Router>
+				<Router>
+					<MenuBarPage mobile={ mobile } />
+					<div className="page-menu" />
+					<div className="page-content">
 						<Switch>
 							<Route exact path="/">
 							</Route>
 							<Route exact path="/login">
+								<UserLoginPage mobile={ mobile } />
 							</Route>
 							<Route exact path="/register">
 							</Route>
 							<Route exact path="/logout">
 							</Route>
 						</Switch>
-					</Router>
-				</div>
+					</div>
+				</Router>
 			</div>
 		);
 	}

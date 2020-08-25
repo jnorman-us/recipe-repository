@@ -17,4 +17,14 @@ export default class Page extends React.Component
 			mobile: props.mobile,
 		});
 	}
+
+	redirectToLogin()
+	{
+		this.props.history.push('/login');
+	}
+
+	redirectToIndex()
+	{
+		this.props.history.push('/');
+	}
 }
