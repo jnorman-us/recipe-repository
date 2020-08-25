@@ -1,0 +1,23 @@
+.menu {
+	position: fixed;
+	width: 100%;
+	height: 85px;
+	background-color: #f00;
+	color: white;
+
+	padding: 10px 10%;
+}
+
+.menu-mobile {
+	padding: 10px 8px;
+}
+
+.menu-logo {
+	height: 65px;
+
+	background-position: center left;
+	background-image: url(../images/logo.png);
+	background-size: contain;
+	filter: invert(56%) sepia(58%) saturate(4127%) hue-rotate(88deg) brightness(119%) contrast(127%);
+	background-repeat: no-repeat;
+}

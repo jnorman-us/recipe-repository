@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import MenuPage from './menu/page.js';
-import RecipeSearchPage from './recipe-search/page.js';
+import MenuBarPage from './menu/pages/bar.js';
 
 import Session from './main/session.js';
 
-import './page.css';
+import './styles/page.css';
 
 export default class Pages extends React.Component
 {
@@ -54,13 +53,12 @@ export default class Pages extends React.Component
 
 		return (
 			<div>
-				<MenuPage mobile={ mobile } />
+				<MenuBarPage mobile={ mobile } />
 				<div className="page-menu" />
 				<div className="page-content">
 					<Router>
 						<Switch>
 							<Route exact path="/">
-								<RecipeSearchPage mobile={ mobile } />
 							</Route>
 							<Route exact path="/login">
 							</Route>

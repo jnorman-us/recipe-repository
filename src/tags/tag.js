@@ -4,6 +4,7 @@ export default class Tag extends DatabaseObject
 {
 	static schema = {
 		name: String,
+		color: String,
 		// image...
 	};
 
@@ -24,6 +25,7 @@ export default class Tag extends DatabaseObject
 		return {
 			id: this.id,
 			name: this.name,
+			color: this.color,
 		};
 	}
 }
