@@ -1,5 +1,5 @@
 .recipesearchbar {
-	background-color: white;
+	background-color: blue;
 	height: 35px;
 	margin: 15px 0px;
 	border-radius: 17.5px;
@@ -16,12 +16,12 @@
 }
 
 .recipesearchbar-open {
-	height: 85px;
+	height: auto;
 	border-radius: 10px;
 }
 
 .recipesearchbar-icon {
-	color: #777;
+	color: #0f0;
 	font-size: 18px;
 }
 
@@ -31,9 +31,21 @@
 	width: calc(100% - 30px);
 	border: 0px;
 	outline: 0px;
-	color: black;
+	color: red;
+	background-color: blue;
+
+	padding-bottom: 0px;
+	border-bottom: 0px solid rgba(0, 0, 0, .1);
+
+	transition: .05s;
 }
 
 .recipesearchbar-input-open {
+	padding-bottom: 2.5px;
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.recipesearchbar-results {
+	width: 100%;
+	min-height: 100%;
 }

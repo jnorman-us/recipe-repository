@@ -20,7 +20,7 @@ async function createTag(req, res)
 	});
 
 	return res.status(
-		tag != null ? 201 : 500,
+		tag != null ? 200 : 500,
 	).json(
 		tag != null ? {
 			tag: tag.id,

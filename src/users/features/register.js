@@ -25,11 +25,13 @@ async function register(req, res)
 	});
 
 	return res.status(
-		user != null ? 201 : 500,
+		user != null ? 200 : 500,
 	).json(
 		user != null ? {
 			user: user.id,
-		} : 500,
+		} : {
+			user: null,
+		},
 	);
 }
 

@@ -23,7 +23,7 @@ async function createIngredient(req, res)
 	});
 
 	return res.status(
-		ingredient != null ? 201 : 500,
+		ingredient != null ? 200 : 500,
 	).json(
 		ingredient != null ? {
 			ingredient: ingredient.id,

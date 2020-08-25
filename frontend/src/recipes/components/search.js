@@ -71,6 +71,10 @@ export default class RecipeSearchComponent extends React.Component
 					type='text'
 					className={ `recipesearchbar-input ${ open_input }` }
 				/>
+				<> { open &&
+					<div className='recipesearchbar-results'>
+					</div>
+				} </>
 			</div>
 		);
 	}
