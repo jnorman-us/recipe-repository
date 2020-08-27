@@ -19,8 +19,6 @@ export default class MenuBarPage extends Page
 		});
 
 		const response = await getWorker('/api/users/me');
-
-		console.log(response);
 	}
 
 	render()

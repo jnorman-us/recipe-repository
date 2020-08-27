@@ -33,10 +33,10 @@ export default class FormFieldComponent extends React.Component
 			value: value,
 			error: error,
 		});
-
+		
 		this.onChange({
 			id: this.id,
-			value: this.props.value,
+			value: value,
 		});
 	}
 

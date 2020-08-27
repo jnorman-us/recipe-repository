@@ -8,8 +8,14 @@ export default async function post(url, data)
 		}
 	});
 
-	return {
-		status: response.status,
-		body: await response.json(),
-	};
+	var body = null;
+
+	try {
+		body = await response.json();
+	} finally {
+		return {
+			status: response.status,
+			body: body,
+		};
+	}
 }

@@ -13,72 +13,50 @@ class UserLoginPage extends Page
 	{
 		super(props);
 
-		this.state.values = {
-			email: 'test',
-			password: 'rest1'
-		};
+		this.fields = [{
+			field: FormTextComponent,
+			id: 'email',
+			label: 'Email',
+			required: true,
+			placeholder: 'example@email.com',
+		}, {
+			field: FormPasswordComponent,
+			id: 'password',
+			label: 'Password',
+			required: true,
+			placeholder: 'password123',
+		}];
 
-		this.state.errors = {
-			email: null,
-			password: null,
+		this.values = {
+			email: 'rest',
+			password: '',
 		};
 	}
 
 	async componentDidMount()
 	{
-		var self = this;
+		const self = this;
+		await (new Promise(function(resolve) {
+			setTimeout(function() {
+				self.values.email = 'bruh';
+				resolve()
+			}, 2000);
+		}));
 
-		setTimeout(function() {
-			self.setState({
-				values: {
-					email: 'bruh@gmail.com',
-					password: 'bruh@gmail.com',
-				},
-				errors: {
-					email: 'yikes',
-					password: 'yiiikes'
-				},
-			});
-		}, 5000);
-	}
-
-	async handleSubmit()
-	{
-
-	}
-
-	handleChange(data)
-	{
-		this.state.values[data.id] = data.value;
+		this.setState({
+			test: false,
+		});
 	}
 
 	render()
 	{
-		console.log(this.state);
 		return (
 			<div>
-				<FormComponent onSubmit={ this.handleSubmit.bind(this) }>
-					<FormTextComponent
-						id={ 'email' }
-						label={ 'Email' }
-						required={ true }
-						placeholder={ 'example@email.com' }
-						onChange={ this.handleChange.bind(this) }
-
-						value={ this.state.values.email }
-						error={ this.state.errors.email }
-					/>
-					<FormPasswordComponent
-						id={ 'password' }
-						label={ 'Password' }
-						required={ true }
-						placeholder={ 'password123' }
-						onChange={ this.handleChange.bind(this) }
-
-						value={ this.state.values.password }
-						error={ this.state.errors.password }
-					/>
-				</FormComponent>
+				<FormComponent
+					url={ '/api/users/login' }
+					fields={ this.fields }
+					values={ this.values }
+				/>
 			</div>
 		);
 	}
