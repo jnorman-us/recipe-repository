@@ -35,9 +35,7 @@ export default class FormComponent extends React.Component
 			form_error: null,
 		});
 
-		const response = await postWorker(this.url, this.values);
-
-		console.log(response, this.state);
+		const response = await postWorker(this.url, this.state.values);
 
 		var form_error = null;
 
@@ -83,9 +81,9 @@ export default class FormComponent extends React.Component
 
 		return (
 			<Form onSubmit={ this.handleSubmit.bind(this) }>
-				<> { this.state.error != null &&
+				<> { this.state.form_error != null &&
 					<Alert variant="danger">
-						{ this.state.error }
+						{ JSON.stringify(this.state.form_error) }
 					</Alert>
 				} </>
 				<> { this.fields.map(function(field) {
