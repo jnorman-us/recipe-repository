@@ -11,7 +11,7 @@ export default class FormFieldComponent extends React.Component
 		this.required = props.required;
 		this.placeholder = props.placeholder;
 
-		this.onChange = function() {};
+		this.onChange = props.onChange;
 
 		this.state = {
 			error: null,
@@ -36,13 +36,8 @@ export default class FormFieldComponent extends React.Component
 
 		this.onChange({
 			id: this.id,
-			value: this.state.value,
+			value: this.props.value,
 		});
-	}
-
-	addOnChange(onChange)
-	{
-		this.onChange = onChange;
 	}
 
 	handleChange(e)
