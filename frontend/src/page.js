@@ -20,11 +20,11 @@ export default class Page extends React.Component
 
 	redirectToLogin()
 	{
-		this.props.history.push('/login');
+		return this.props.history.push('/login');
 	}
 
 	redirectToIndex()
 	{
-		this.props.history.push('/');
+		return this.props.history.push('/');
 	}
 }

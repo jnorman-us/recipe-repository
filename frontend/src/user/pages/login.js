@@ -28,24 +28,24 @@ class UserLoginPage extends Page
 		}];
 
 		this.values = {
-			email: 'rest',
+			email: '',
 			password: '',
 		};
 	}
 
-	async componentDidMount()
+	handleSuccess(body)
 	{
-		const self = this;
-		await (new Promise(function(resolve) {
-			setTimeout(function() {
-				self.values.email = 'bruh';
-				resolve()
-			}, 2000);
-		}));
+		this.redirectToIndex();
+	}
 
-		this.setState({
-			test: false,
-		});
+	handleUnauthorized()
+	{
+		this.redirectToIndex();
+	}
+
+	handleForbidden()
+	{
+		return 'Incorrect email or password';
 	}
 
 	render()
@@ -56,6 +56,9 @@ class UserLoginPage extends Page
 					url={ '/api/users/login' }
 					fields={ this.fields }
 					values={ this.values }
+					onSuccess={ this.handleSuccess.bind(this) }
+					onUnauthorized={ this.handleUnauthorized.bind(this) }
+					onForbidden={ this.handleForbidden.bind(this) }
 				/>
 			</div>
 		);

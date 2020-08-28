@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import MenuBarPage from './menu/pages/bar.js';
 import UserLoginPage from './user/pages/login.js';
+import UserLogoutPage from './user/pages/logout.js';
 
 import './styles/page.css';
 
@@ -63,6 +64,7 @@ export default class Pages extends React.Component
 							<Route exact path="/register">
 							</Route>
 							<Route exact path="/logout">
+								<UserLogoutPage mobile={ mobile } />
 							</Route>
 						</Switch>
 					</div>

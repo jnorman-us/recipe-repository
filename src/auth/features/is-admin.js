@@ -4,5 +4,5 @@ export default async function isAdmin(req, res, next)
 	{
 		return next();
 	}
-	return res.status(401).json();
+	return res.status(403).json();
 }

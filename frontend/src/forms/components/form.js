@@ -11,11 +11,15 @@ export default class FormComponent extends React.Component
 
 		this.url = props.url;
 		this.fields = props.fields;
+		this.onSuccess = props.onSuccess;
+		this.onUnauthorized = props.onUnauthorized;
+		this.onForbidden = props.onForbidden;
 
 		this.state = {
 			submitting: false,
-			form_error: null,
+			form_error: '',
 			values: props.values,
+			errors: {},
 		};
 	}
 
@@ -32,36 +36,38 @@ export default class FormComponent extends React.Component
 
 		this.setState({
 			submitting: true,
-			form_error: null,
+			form_error: '',
 		});
 
 		const response = await postWorker(this.url, this.state.values);
 
-		var form_error = null;
+		var form_error = '';
 
 		if(response.status === 422)
 		{
-			form_error = response.body;
+			console.log(response.body);
+			// per field error
+			form_error = JSON.stringify(response.body);
 		}
 		else if(response.status === 500)
 		{
 			form_error = 'Internal Server Error';
 		}
-		else if(response.status === 403)
-		{
-			form_error = 'Forbidden';
-		}
 		else if(response.status === 401)
 		{
-			form_error = 'Unauthorized';
+			return this.onUnauthorized();
+		}
+		else if(response.status === 403)
+		{
+			form_error = this.onForbidden();
 		}
 		else if(response.status === 404)
 		{
 			form_error = 'Not Found';
 		}
-		else
+		else if(response.status === 200)
 		{
-
+			return this.onSuccess(response.body);
 		}
 
 		this.setState({
@@ -81,9 +87,9 @@ export default class FormComponent extends React.Component
 
 		return (
 			<Form onSubmit={ this.handleSubmit.bind(this) }>
-				<> { this.state.form_error != null &&
+				<> { this.state.form_error !== '' &&
 					<Alert variant="danger">
-						{ JSON.stringify(this.state.form_error) }
+						{ this.state.form_error }
 					</Alert>
 				} </>
 				<> { this.fields.map(function(field) {
@@ -97,7 +103,7 @@ export default class FormComponent extends React.Component
 							onChange={ self.handleChange.bind(self) }
 
 							value={ self.state.values[field.id] }
-							error={ null }
+							error={ self.state.errors[field.id] }
 						/>
 					);
 				}) } </>
