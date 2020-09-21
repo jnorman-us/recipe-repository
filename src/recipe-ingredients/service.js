@@ -46,4 +46,11 @@ export default class RecipeIngredientsService
 			ingredient_id: ingredient_id,
 		}).limit(limit);
 	}
+
+	static async deleteByRecipe(recipe_id)
+	{
+		return await RecipeIngredientsService.model.deleteMany({
+			recipe_id: recipe_id,
+		});
+	}
 }

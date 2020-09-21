@@ -13,6 +13,8 @@ import RecipesService from './recipes/service.js';
 import TagsService from './tags/service.js';
 import UsersService from './users/service.js';
 
+// here are the args:
+// npm run load_json -- --file ~/hello-fetch/recipes.json --user 5f686e601bc48d1c014c4347
 (async function() {
 	// initialize the services we will use
 	await ConfigService.initialize();
@@ -71,6 +73,8 @@ async function createRecipe(recipe_data, creator)
 		description: recipe_data.description,
 	});
 
+	var fail = false;
+
 	if(recipe == null)
 		LoggerService.red(`Failed to create Recipe "${ recipe.name }"`);
 	else
@@ -80,7 +84,10 @@ async function createRecipe(recipe_data, creator)
 			const r_i_data = await parseIngredient(r_i);
 
 			if(r_i_data == null)
+			{
 				LoggerService.red(`Failed to create Ingredient "${ r_i }"`);
+				fail = true;
+			}
 			else
 			{
 				var recipe_ingredient = await RecipeIngredientsService.create({
@@ -91,13 +98,26 @@ async function createRecipe(recipe_data, creator)
 				});
 
 				if(recipe_ingredient == null)
+				{
 					LoggerService.red(`Failed to create RecipeIngredient "${ r_i }"`);
+					fail = true;
+				}
 				else
-					LoggerService.green(`Created RecipeIngredient "${ r_i }"`);
+					LoggerService.blue(`Created RecipeIngredient "${ r_i }"`);
 			}
 		}
 
-		LoggerService.green(`Created Recipe: "${ recipe.name }"`);
+		if(fail)
+		{
+			await RecipesService.delete(recipe.id);
+			await RecipeIngredientsService.deleteByRecipe(recipe.id);
+			LoggerService.green(`Deleted Recipe: "${ recipe.name }"`);
+		}
+		else
+		{
+			LoggerService.green(`Created Recipe: "${ recipe.name }"`);
+		}
+
 	}
 }
 

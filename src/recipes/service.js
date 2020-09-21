@@ -29,6 +29,13 @@ export default class RecipesService
 		});
 	}
 
+	static async delete(id)
+	{
+		return await RecipesService.model.deleteOne({
+			_id: id,
+		});
+	}
+
 	static async edit(id, data)
 	{
 		return await RecipesService.model.findOneAndUpdate({
