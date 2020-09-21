@@ -8,8 +8,6 @@ import UnitType from './types/unit-type.js';
 
 export default class UnitsService
 {
-	static model;
-
 	static async initialize()
 	{
 		DatabaseService.addSchemaType(Unit, 'Unit');
@@ -33,6 +31,17 @@ export default class UnitsService
 				if(type.units.includes(val)) return true;
 		}
 		return false;
+	}
+
+	static getTypeOfUnit(unit_val)
+	{
+		for(const type of units.types)
+		{
+			if(type.units != null)
+				if(type.units.includes(unit_val))
+					return type.type;
+		}
+		return null;
 	}
 
 	static isUnitOfType(type_val, unit_val)

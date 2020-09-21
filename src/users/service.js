@@ -27,9 +27,13 @@ export default class UsersService
 
 	static async getById(id)
 	{
-		return await UsersService.model.findOne({
-			_id: id,
-		});
+		try {
+			return await UsersService.model.findOne({
+				_id: id,
+			});
+		} catch(err) {
+			return null;
+		}
 	}
 
 	static async getByEmail(email)

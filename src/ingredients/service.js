@@ -32,6 +32,14 @@ export default class IngredientsService
 		});
 	}
 
+	// exact name only
+	static async getByName(name)
+	{
+		return await IngredientsService.model.findOne({
+			name: name,
+		});
+	}
+
 	static async searchByName(search, result_limit)
 	{
 		const regex = new RegExp(search);

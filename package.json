@@ -4,7 +4,8 @@
   "description": "The repository for all my recipes",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch src/ --experimental-modules --experimental-json-modules src/index.js "
+    "load_json": "node --experimental-modules --experimental-json-modules src/load_json.js",
+    "start": "nodemon --watch src/ --experimental-modules --experimental-json-modules src/index.js"
   },
   "type": "module",
   "repository": {
@@ -23,6 +24,7 @@
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "express-validator": "^6.6.1",
+    "minimist": "^1.2.5",
     "mongoose": "^5.9.28",
     "nodemon": "^2.0.4",
     "password-hash": "^1.2.2",
