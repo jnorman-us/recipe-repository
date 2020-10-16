@@ -29,6 +29,18 @@ export default class RecipesService
 		});
 	}
 
+	static async searchByName(search, result_limit)
+	{
+		const regex = new RegExp(search);
+
+		return await RecipesService.model.find({
+			name: {
+				$regex: regex,
+				$options: 'i',
+			}
+		}).limit(result_limit);
+	}
+
 	static async delete(id)
 	{
 		return await RecipesService.model.deleteOne({
