@@ -20,6 +20,7 @@ import * as AddRecipeTag from '../recipe-tags/features/add.js';
 
 import * as CreateRecipe from '../recipes/features/create.js';
 import * as GetRecipe from '../recipes/features/get.js';
+import * as RandomRecipe from '../recipes/features/random.js';
 import * as SearchRecipe from '../recipes/features/search.js';
 import * as UpdateInstructions from '../recipes/features/update-instructions.js';
 
@@ -58,6 +59,7 @@ export default class AppService
 
 		CreateRecipe,
 		GetRecipe,
+		RandomRecipe,
 		SearchRecipe,
 		UpdateInstructions,
 

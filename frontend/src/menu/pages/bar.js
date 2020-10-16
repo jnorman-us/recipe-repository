@@ -24,20 +24,8 @@ export default class MenuBarPage extends Page
 	render()
 	{
 		return (
-			<div className={ `menu ${ this.state.mobile ? 'menu-mobile' : '' }`}>
-				<Container fluid className="px-0">
-					<Row>
-						<Col xs={ 4 } md={ 3 }>
-							<div className='menu-logo' />
-						</Col>
-						<Col xs={ 4 } md={ 6 }>
-							<RecipeSearchComponent />
-						</Col>
-						<Col xs={ 4 } md={ 3 }>
-							Account
-						</Col>
-					</Row>
-				</Container>
+			<div>
+				
 			</div>
 		);
 	}

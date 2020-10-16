@@ -1,14 +1,10 @@
 body {
 	margin: 0;
+	font-family: "Open Sans", sans-serif;
 }
 
-.page-menu {
-	width: 100vw;
-	height: 85px;
-}
-
+/* defines space for the menu above */
 .page-content {
-	width: 100vw;
 	height: auto;
-	background-color: #ffd5c2;
+	margin-top: 80px;
 }

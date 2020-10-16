@@ -10,8 +10,6 @@ async function searchRecipes(req, res)
 
 	const recipes = await RecipesService.searchByName(query, 20);
 
-	console.log(recipes);
-
 	const recipe_fulls = [];
 	for(const recipe of recipes)
 	{

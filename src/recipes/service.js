@@ -41,6 +41,13 @@ export default class RecipesService
 		}).limit(result_limit);
 	}
 
+	static async getRandom(result_limit)
+	{
+		return await RecipesService.model.aggregate([{
+			$sample: { size: result_limit },
+		}]);
+	}
+
 	static async delete(id)
 	{
 		return await RecipesService.model.deleteOne({

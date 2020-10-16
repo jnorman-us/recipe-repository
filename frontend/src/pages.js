@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import MenuBarPage from './menu/pages/bar.js';
+import RecipeSearchComponent from './recipes/pages/search.js';
 import UserLoginPage from './user/pages/login.js';
 import UserLogoutPage from './user/pages/logout.js';
 
@@ -52,22 +53,19 @@ export default class Pages extends React.Component
 		return (
 			<div>
 				<Router>
-					<MenuBarPage mobile={ mobile } />
-					<div className="page-menu" />
-					<div className="page-content">
-						<Switch>
-							<Route exact path="/">
-							</Route>
-							<Route exact path="/login">
-								<UserLoginPage mobile={ mobile } />
-							</Route>
-							<Route exact path="/register">
-							</Route>
-							<Route exact path="/logout">
-								<UserLogoutPage mobile={ mobile } />
-							</Route>
-						</Switch>
-					</div>
+					<Switch>
+						<Route exact path="/">
+							<RecipeSearchComponent mobile={ mobile } />
+						</Route>
+						<Route exact path="/login">
+							<UserLoginPage mobile={ mobile } />
+						</Route>
+						<Route exact path="/register">login
+						</Route>
+						<Route exact path="/logout">
+							<UserLogoutPage mobile={ mobile } />
+						</Route>
+					</Switch>
 				</Router>
 			</div>
 		);
