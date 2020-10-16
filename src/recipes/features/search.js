@@ -15,7 +15,7 @@ async function searchRecipes(req, res)
 	const recipe_fulls = [];
 	for(const recipe of recipes)
 	{
-		recipe_fulls.push(await recipe.getFull());
+		recipe_fulls.push(recipe.safe);
 	}
 
 	return res.status(200).json(recipe_fulls);
