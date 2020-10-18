@@ -20,6 +20,12 @@
 	height: auto;
 
 	padding: 0 15%;
+	padding-top: calc(50% - 200px);
+	transition: .35s;
+}
+
+.recipe-search-content-searching {
+	padding-top: 100px;
 }
 
 .recipe-search-content-mobile {
@@ -35,6 +41,7 @@
 	font-size: 45px;
 	text-shadow: 4px 3px 0 #555;
 	font-weight: bolder;
+	transition: 1s;
 }
 
 .recipe-search-bar {

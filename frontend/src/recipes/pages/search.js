@@ -1,7 +1,7 @@
 import React from 'react';
 import FA from 'react-fontawesome';
 import CountUp from 'react-countup';
-import { SpringGrid, measureItems, makeResponsive, layout } from 'react-stonecutter';
+import { Container } from 'react-bootstrap';
 
 import Page from '../../page.js';
 
@@ -17,6 +17,7 @@ export default class RecipeSearchComponent extends Page
 	{
 		super(props);
 
+		this.search_query = '';
 		this.recipes = new Map();
 		this.recipe_count = 0;
 	}
@@ -63,11 +64,6 @@ export default class RecipeSearchComponent extends Page
 
 	render()
 	{
-		const Grid = makeResponsive(SpringGrid, {
-			maxWidth: 1920,
-			minPadding: 0
-		});
-
 		var mobile = this.state.mobile;
 		var recipes_loading = this.state.recipes_loading;
 		var input_focused = this.state.input_focused;
@@ -118,13 +114,9 @@ export default class RecipeSearchComponent extends Page
 							/>
 						</div>
 						<div className="recipe-search-results">
-							<Grid
-								columnWidth={ 300 }
-								gutterWidth={ 5 }
-								gutterHeight={ 5 }
-							>
-								{ recipe_search_results }
-							</Grid>
+							<Container responsive="true">
+
+							</Container>
 						</div>
 					</div>
 				</div>
