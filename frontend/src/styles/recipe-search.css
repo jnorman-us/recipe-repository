@@ -11,8 +11,7 @@
 	background-position: center;
 	background-size: cover;
 
-	filter: blur(1px);
-	filter: brightness(60%);
+	filter: brightness(60%) blur(1px);
 }
 
 .recipe-search-content {
@@ -50,23 +49,33 @@
 
 	padding-left: 16px;
 	padding-right: 16px;
-	padding-top: 7px;
+	padding-top: 10px;
 
 	vertical-align: top;
+	transition: .15s;
+}
+
+.recipe-search-bar-focused {
+	border-radius: 15px;
 }
 
 .recipe-search-bar-icon {
 	color: #666;
-	font-size: 30px;
-
+	font-size: 18px;
 }
 
 .recipe-search-bar-input {
-	font-size: 24px;
+	font-size: 18px;
 	margin-left: 12px;
 	width: calc(100% - 50px);
 	border: 0px;
 	padding: 0px;
 	outline: 0px;
-	font-weight: bolder;
+	font-weight: 500;
+}
+
+.recipe-search-results {
+	margin-top: 25px;
+	width: 100%;
+	height: auto;
 }

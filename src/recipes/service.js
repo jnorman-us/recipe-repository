@@ -48,6 +48,11 @@ export default class RecipesService
 		}]);
 	}
 
+	static async getCount()
+	{
+		return await RecipesService.model.countDocuments();
+	}
+
 	static async delete(id)
 	{
 		return await RecipesService.model.deleteOne({

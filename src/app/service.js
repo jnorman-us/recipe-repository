@@ -18,6 +18,7 @@ import * as AddRecipeIngredient from '../recipe-ingredients/features/add.js';
 
 import * as AddRecipeTag from '../recipe-tags/features/add.js';
 
+import * as CountRecipe from '../recipes/features/count.js';
 import * as CreateRecipe from '../recipes/features/create.js';
 import * as GetRecipe from '../recipes/features/get.js';
 import * as RandomRecipe from '../recipes/features/random.js';
@@ -57,6 +58,7 @@ export default class AppService
 
 		AddRecipeTag,
 
+		CountRecipe,
 		CreateRecipe,
 		GetRecipe,
 		RandomRecipe,
