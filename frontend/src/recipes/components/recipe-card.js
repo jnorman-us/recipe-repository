@@ -15,7 +15,7 @@ export default class RecipeCardComponent extends React.Component
 	{
 		return (
 			<div className="recipe-card">
-				{ JSON.stringify(this.recipe) }
+				{ this.recipe.name }
 			</div>
 		);
 	}

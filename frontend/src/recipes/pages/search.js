@@ -1,7 +1,7 @@
 import React from 'react';
 import FA from 'react-fontawesome';
 import CountUp from 'react-countup';
-import { SpringGrid, makeResponsive } from 'react-stonecutter';
+import { SpringGrid, measureItems, makeResponsive, layout } from 'react-stonecutter';
 
 import Page from '../../page.js';
 
@@ -63,7 +63,10 @@ export default class RecipeSearchComponent extends Page
 
 	render()
 	{
-		const Grid = makeResponsive(SpringGrid, { default_columns: 2 })
+		const Grid = makeResponsive(SpringGrid, {
+			maxWidth: 1920,
+			minPadding: 0
+		});
 
 		var mobile = this.state.mobile;
 		var recipes_loading = this.state.recipes_loading;
@@ -76,10 +79,10 @@ export default class RecipeSearchComponent extends Page
 		var recipe_search_bar_input_placeholder = !recipes_loading;
 
 		var recipe_search_results = [];
-		for(var recipe of this.recipes)
+		for(var [id, recipe] of this.recipes)
 		{
 			recipe_search_results.push(
-				<div key={ recipe.id }>
+				<div key={ id }>
 					<RecipeCardComponent
 						recipe={ recipe }
 					/>
@@ -116,7 +119,9 @@ export default class RecipeSearchComponent extends Page
 						</div>
 						<div className="recipe-search-results">
 							<Grid
-
+								columnWidth={ 300 }
+								gutterWidth={ 5 }
+								gutterHeight={ 5 }
 							>
 								{ recipe_search_results }
 							</Grid>
