@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import RecipeSearchComponent from './recipes/pages/search.js';
+import RecipeSearchPage from './recipes/pages/search.js';
 import UserLoginPage from './user/pages/login.js';
 import UserLogoutPage from './user/pages/logout.js';
 
@@ -27,7 +27,6 @@ export default class Pages extends React.Component
 	updateDimensions()
 	{
 		const width = window.innerWidth;
-		const height = window.innerHeight;
 
 		const mobile_width = 800;
 
@@ -54,7 +53,7 @@ export default class Pages extends React.Component
 				<Router>
 					<Switch>
 						<Route exact path="/">
-							<RecipeSearchComponent mobile={ mobile } />
+							<RecipeSearchPage mobile={ mobile } />
 						</Route>
 						<Route exact path="/login">
 							<UserLoginPage mobile={ mobile } />

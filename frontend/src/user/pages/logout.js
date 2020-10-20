@@ -7,11 +7,6 @@ import getWorker from '../../workers/get.js';
 
 class UserLogoutPage extends Page
 {
-	constructor(props)
-	{
-		super(props);
-	}
-
 	async componentDidMount()
 	{
 		const response = await getWorker('/api/users/logout');

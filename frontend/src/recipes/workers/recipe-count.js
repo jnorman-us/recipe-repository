@@ -4,7 +4,7 @@ export default async function randomRecipeWorker()
 {
 	const response = await getWorker('/api/recipes/count');
 
-	if(response.status == 200)
+	if(response.status === 200)
 	{
 		return response.body;
 	}
