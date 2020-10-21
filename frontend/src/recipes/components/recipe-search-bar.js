@@ -70,14 +70,10 @@ export default class RecipeSearchBarComponent extends React.Component
 		const input_focused = this.state.input_focused;
 		const placeholder = this.state.placeholder;
 
-		var recipe_search_bar = `recipe-search-bar ${ input_focused ? 'recipe-search-bar-focused' : '' }`;
+		var recipe_search_bar = `recipe-search-bar`;
 
 		return (
 			<div className={ recipe_search_bar }>
-				<FontAwesome
-					name="search"
-					className="recipe-search-bar-icon"
-				/>
 				<input
 					type="text"
 					className="recipe-search-bar-input"

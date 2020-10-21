@@ -1,23 +1,41 @@
 .menu {
 	position: fixed;
 	width: 100%;
-	height: 85px;
-	background-color: #f00;
-	color: white;
+	height: 55px;
 
-	padding: 10px 10%;
+	background-color: #382933;
+
+	padding: 0px 15%;
+	transition: .15s;
 }
 
 .menu-mobile {
-	padding: 10px 8px;
+	padding: 0px 10px;
+}
+
+.menu-content {
+	width: 100%;
+	height: 100%;
 }
 
 .menu-logo {
-	height: 65px;
+	float:left;
+	position: relative;
+	font-size: 36px;
+	font-weight: 600;
+}
 
-	background-position: center left;
-	background-image: url(../images/logo.png);
-	background-size: contain;
-	filter: invert(56%) sepia(58%) saturate(4127%) hue-rotate(88deg) brightness(119%) contrast(127%);
-	background-repeat: no-repeat;
+.menu-logo-recipe {
+	color: #519872;
+	float: left;
+}
+
+.menu-logo-repo {
+	color: #a4b494;
+	float: left;
+}
+
+.menu-search {
+	float: left;
+	margin-left: 25px;
 }

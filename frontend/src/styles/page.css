@@ -5,8 +5,13 @@ body {
 	font-family: "Open Sans", sans-serif;
 }
 
+.page-menu {
+	width: 100%;
+	height: 55px;
+}
+
 /* defines space for the menu above */
 .page-content {
 	position: relative;
-	margin-top: 0px;
+	width: 100%;
 }
